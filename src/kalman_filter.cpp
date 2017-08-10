@@ -71,6 +71,18 @@ void KalmanFilter::UpdateEKF(const VectorXd &z) {
 	float ro_dot = ((p_x*v_x + p_y*v_y)/sqrt(denom));
 	if (z(1) > 0 && phi < 0){ phi = fabs(phi);}
 
+/*
+	if ((phi > 3.14) || (phi < -3.14)){
+		while (phi > 3.14){
+			phi -= 3.14*2;
+		}
+		while (phi < -3.14){
+			phi += 3.14*2;
+		}
+
+	}
+
+ */
 	// std::cout << "\n\nro = " << ro << ", phi = " << phi << ", ro' = " << ro_dot;
 
 	// Load our h(x) vector

@@ -130,8 +130,14 @@ void FusionEKF::ProcessMeasurement(const MeasurementPackage &measurement_pack) {
 							0, 0, 0, 1;
 
 	// Set Q_ parameters
-	float noise_ax = 81;
-	float noise_ay = 81;
+	float noise_ax = 45;
+	float noise_ay = 45;
+//	float noise_ax = 9;
+//	float noise_ay = 9;
+//	float noise_ax = 81;
+//	float noise_ay = 81;
+//	float noise_ax = 0.0009;
+//	float noise_ay = 0.0009;
 	double ax4 = pow(dt,4)*noise_ax/4.0;
 	double ax3 = pow(dt,3)*noise_ax/2.0;
 	double ax2 = pow(dt,2)*noise_ax;
